@@ -101,31 +101,35 @@ h1,h2,h3,p{margin-top:0}
 .partner-small{left:43%;bottom:0;width:14%;height:248px;background:var(--mint);border-radius:0 100% 0 100%}
 
 
+
 .brand-footer{
-  min-height:680px;
+  height:860px;
   position:relative;
   overflow:hidden;
-  padding:78px 3% 28px;
   background:var(--bg);
+  padding:0;
 }
+
+/* Keep the branding completely separate from the decorative shapes */
 .footer-lockup{
-  position:relative;
-  z-index:2;
-  margin-left:17.5%;
-  margin-top:45px;
+  position:absolute;
+  z-index:5;
+  left:clamp(260px,18vw,340px);
+  top:350px;
   display:grid;
-  grid-template-columns:190px 390px;
-  column-gap:28px;
+  grid-template-columns:205px 430px;
+  column-gap:34px;
   align-items:center;
-  width:max-content;
+  width:auto;
+  margin:0;
 }
 .footer-lockup img{
-  width:190px;
-  height:190px;
+  width:205px;
+  height:205px;
   object-fit:contain;
 }
 .footer-lockup h2{
-  font-size:54px;
+  font-size:62px;
   line-height:1.16;
   letter-spacing:-1px;
   margin:0;
@@ -133,13 +137,15 @@ h1,h2,h3,p{margin-top:0}
 .footer-lockup .pill{
   grid-column:2;
   width:185px;
-  margin-top:34px;
+  margin-top:42px;
   background:var(--sage);
 }
+
+/* Decorative forms — capped sizes so they cannot stretch on wide screens */
 .footer-left-light{
-  left:-7%;
+  left:-90px;
   top:0;
-  width:21%;
+  width:340px;
   height:300px;
   background:var(--mint);
   border-radius:0 100% 0 0;
@@ -147,43 +153,46 @@ h1,h2,h3,p{margin-top:0}
 .footer-left-dark{
   left:0;
   top:305px;
-  width:14%;
-  height:245px;
+  width:250px;
+  height:250px;
   background:var(--sage);
   border-radius:0 100% 0 0;
 }
 .footer-top-dark{
-  left:14%;
+  left:250px;
   top:0;
-  width:28%;
-  height:205px;
+  width:510px;
+  height:255px;
   background:var(--sage);
   border-radius:0 0 100% 0;
 }
 .footer-top-light{
-  left:42.5%;
+  left:765px;
   top:0;
-  width:14%;
-  height:205px;
+  width:255px;
+  height:255px;
   background:var(--mint);
   border-radius:0 0 0 100%;
 }
 .footer-right{
-  right:0;
-  top:205px;
-  width:14%;
-  height:205px;
+  right:-35px;
+  top:315px;
+  width:255px;
+  height:255px;
   background:var(--sage);
   border-radius:0 0 0 100%;
 }
+
+/* Footer information stays anchored to the bottom-left */
 .footer-info{
-  position:relative;
-  z-index:2;
+  position:absolute;
+  z-index:5;
+  left:54px;
+  bottom:32px;
   display:grid;
-  grid-template-columns:220px 560px;
-  gap:70px;
-  margin-top:56px;
-  margin-left:0;
+  grid-template-columns:250px 560px;
+  gap:80px;
+  margin:0;
   font-size:14px;
   color:var(--text);
 }
@@ -202,6 +211,7 @@ h1,h2,h3,p{margin-top:0}
   line-height:1.55;
   margin-bottom:16px;
 }
+
 
 
 .contact-hero{height:780px;position:relative;overflow:hidden}
@@ -237,6 +247,15 @@ h1,h2,h3,p{margin-top:0}
 .field input{height:48px}.field textarea{height:98px;resize:vertical}
 .form-submit{width:170px;height:42px;border:0;border-radius:999px;background:var(--sage);color:white;font-weight:800}
 .contact-footer-section{padding-top:70px}
+
+
+@media(min-width:1800px){
+  .brand-footer{
+    max-width:1792px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
 
 @media(max-width:980px){
   .site-header{grid-template-columns:1fr auto;padding:0 16px;height:68px}
@@ -285,12 +304,18 @@ h1,h2,h3,p{margin-top:0}
   .partner-cta{position:relative;top:auto;right:auto;margin-top:36px}
   .partner-left,.partner-mid,.partner-small{opacity:.5}
 
-  .brand-footer{padding:90px 7% 30px}
-  .footer-lockup{margin:0 auto;grid-template-columns:120px auto}
+  .brand-footer{height:auto;min-height:760px;padding:90px 7% 35px}
+  .footer-lockup{
+    position:relative;left:auto;top:auto;margin:130px auto 0;
+    grid-template-columns:120px auto;column-gap:22px;width:max-content
+  }
   .footer-lockup img{width:120px;height:120px}
   .footer-lockup h2{font-size:38px}
   .footer-lockup .pill{grid-column:1/-1;justify-self:center}
-  .footer-info{grid-template-columns:1fr;gap:35px;margin-top:90px}
+  .footer-info{
+    position:relative;left:auto;bottom:auto;
+    grid-template-columns:1fr;gap:35px;margin-top:90px
+  }
   .footer-left-light,.footer-left-dark,.footer-top-dark,.footer-top-light,.footer-right{opacity:.35}
 
   .contact-hero{height:790px}
