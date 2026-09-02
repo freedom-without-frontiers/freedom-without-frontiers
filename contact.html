@@ -3,176 +3,122 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact & Donate | Freedom Without Frontiers</title>
-  <meta name="description" content="Contact Freedom Without Frontiers, get involved, become a mentor, explore partnerships, volunteer, or support our mission.">
+  <title>Contact | Freedom Without Frontiers</title>
+  <meta name="description" content="Donate, volunteer, mentor, partner, or contact Freedom Without Frontiers.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Freedom Without Frontiers home">
-      <img src="assets/logo-mark.png" alt="Freedom Without Frontiers logo">
-      <span>FREEDOM WITHOUT FRONTIERS</span>
-    </a>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="assets/logo-mark.png" alt="Freedom Without Frontiers">
+    <span>FREEDOM WITHOUT FRONTIERS</span>
+  </a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav class="nav">
+    <a href="index.html">HOME</a>
+    <a href="index.html#about">ABOUT</a>
+    <a href="index.html#get-involved">GET INVOLVED</a>
+    <a class="active" href="contact.html">CONTACT</a>
+  </nav>
+  <a class="pill header-cta" href="#contact-form"><span>INQUIRE NOW</span><b>→</b></a>
+</header>
 
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+<main>
+  <section class="contact-hero">
+    <div class="shape contact-left-light"></div>
+    <div class="shape contact-left-dark"></div>
+    <div class="contact-flags"><img src="assets/flags.jpg" alt="International flags"></div>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="index.html">HOME</a>
-      <a href="index.html#about">ABOUT</a>
-      <a href="index.html#get-involved">GET INVOLVED</a>
-      <a class="active" href="contact.html">CONTACT</a>
-    </nav>
+    <div class="contact-title">
+      <h1>Donate and Join Our Mission</h1>
+    </div>
 
-    <a class="pill header-cta" href="#contact-form">
-      <span>INQUIRE NOW</span><b>→</b>
-    </a>
-  </header>
+    <div class="contact-bodycopy">
+      <p>Creating a world of greater opportunity requires all of us. Whether you volunteer, become a mentor, partner with us, advocate for our cause, or support our programs, your involvement can make a meaningful difference. Join a growing community of individuals and organizations committed to empowering people, unlocking potential, and building a future where opportunity is accessible to everyone.</p>
+      <p>Together, we can help transform potential into possibility.</p>
+    </div>
+  </section>
 
-  <main class="contact-page">
-    <section class="contact-hero shell">
-      <div class="contact-leaf contact-leaf-1"></div>
-      <div class="contact-leaf contact-leaf-2"></div>
-
-      <div class="contact-flags">
-        <img src="assets/flags.jpg" alt="International flags representing global opportunity">
+  <section class="donation-block" id="donate">
+    <div class="donation-inner">
+      <h2>Make a donation</h2>
+      <label>Frequency</label>
+      <div class="frequency-group">
+        <button class="donation-choice frequency active" type="button" data-frequency="One time">One time</button>
+        <button class="donation-choice frequency" type="button" data-frequency="Monthly">Monthly</button>
       </div>
 
-      <div class="contact-hero-copy">
-        <h1>Donate and Join Our Mission</h1>
-        <p>
-          Creating a world of greater opportunity requires all of us. Whether you volunteer,
-          become a mentor, partner with us, advocate for our cause, or support our programs,
-          your involvement can make a meaningful difference. Join a growing community of
-          individuals and organizations committed to empowering people, unlocking potential,
-          and building a future where opportunity is accessible to everyone.
-        </p>
-        <p>Together, we can help transform potential into possibility.</p>
-      </div>
-    </section>
-
-    <section class="donation-section shell" id="donate">
-      <div class="donation-box">
-        <h2>Make a donation</h2>
-
-        <div class="donation-label">Frequency</div>
-        <div class="frequency-group" role="group" aria-label="Donation frequency">
-          <button class="donation-choice frequency active" type="button" data-frequency="One time">One time</button>
-          <button class="donation-choice frequency" type="button" data-frequency="Monthly">Monthly</button>
-        </div>
-
-        <div class="donation-label">Amount</div>
-        <div class="amount-group" role="group" aria-label="Donation amount">
-          <button class="donation-choice amount active" type="button" data-amount="10">$10</button>
-          <button class="donation-choice amount" type="button" data-amount="20">$20</button>
-          <button class="donation-choice amount" type="button" data-amount="50">$50</button>
-          <button class="donation-choice amount" type="button" data-amount="100">$100</button>
-          <button class="donation-choice amount" type="button" data-amount="Other">Other</button>
-        </div>
-
-        <div class="custom-amount-wrap" hidden>
-          <label for="custom-amount">Enter amount (CAD)</label>
-          <input id="custom-amount" class="custom-amount" type="number" min="1" step="1" inputmode="decimal" placeholder="Enter amount">
-        </div>
-
-        <button class="donate-submit" id="donate-button" type="button">DONATE $10</button>
-        <p class="setup-note" id="donation-note">
-          Donation checkout will be connected before the domain is switched from Wix.
-        </p>
-      </div>
-    </section>
-
-    <section class="contact-content shell">
-      <h2>Contact Us</h2>
-
-      <div class="contact-layout">
-        <div class="contact-intro">
-          <p>
-            Whether you're looking to get involved, become a mentor, explore a partnership,
-            volunteer your time, or simply learn more about our mission, we'd love to hear from you.
-          </p>
-
-          <p>
-            At Freedom Without Frontiers, we believe meaningful change starts with connection.
-            Reach out today and discover how you can help expand opportunity, empower individuals,
-            and make a lasting impact in communities around the world.
-          </p>
-
-          <p>Together, we can build a future where opportunity knows no borders.</p>
-        </div>
-
-        <form class="contact-form" id="contact-form">
-          <div class="field">
-            <label for="first-name">FIRST NAME *</label>
-            <input id="first-name" name="firstName" type="text" required>
-          </div>
-
-          <div class="field">
-            <label for="last-name">LAST NAME *</label>
-            <input id="last-name" name="lastName" type="text" required>
-          </div>
-
-          <div class="field">
-            <label for="email">EMAIL *</label>
-            <input id="email" name="email" type="email" required>
-          </div>
-
-          <div class="field">
-            <label for="phone">PHONE</label>
-            <input id="phone" name="phone" type="tel">
-          </div>
-
-          <div class="field full">
-            <label for="message">MESSAGE *</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-
-          <div class="field full">
-            <button class="form-submit" type="submit">SUBMIT</button>
-            <p class="setup-note form-note" id="form-note">
-              Form delivery will be connected before the domain is switched from Wix.
-            </p>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <section class="contact-footer-art shell">
-      <div class="footer-leaf fl-1"></div>
-      <div class="footer-leaf fl-2"></div>
-      <div class="footer-leaf fl-3"></div>
-      <div class="footer-leaf fl-4"></div>
-      <div class="footer-leaf fl-5"></div>
-
-      <div class="contact-brand-lockup">
-        <img src="assets/logo-mark.png" alt="Freedom Without Frontiers logo">
-        <h2>FREEDOM<br>WITHOUT<br>FRONTIERS</h2>
-        <a class="pill" href="mailto:admin@freedomwithoutfrontiers.ca">
-          <span>CONTACT</span><b>→</b>
-        </a>
+      <label>Amount</label>
+      <div class="amount-group">
+        <button class="donation-choice amount active" type="button" data-amount="10">$10</button>
+        <button class="donation-choice amount" type="button" data-amount="20">$20</button>
+        <button class="donation-choice amount" type="button" data-amount="50">$50</button>
+        <button class="donation-choice amount" type="button" data-amount="100">$100</button>
+        <button class="donation-choice amount" type="button" data-amount="Other">Other</button>
       </div>
 
-      <footer class="contact-footer">
-        <div>
-          <strong>MENU</strong>
-          <a href="index.html#about">About</a>
-          <a href="index.html#get-involved">Get Involved</a>
-          <a href="#donate">Donate</a>
-        </div>
+      <div class="custom-amount-wrap" hidden>
+        <input id="custom-amount" class="custom-amount" type="number" min="1" placeholder="Enter amount (CAD)">
+      </div>
 
-        <div>
-          <strong>CONTACT</strong>
-          <a href="tel:+14163006467">+1 416 300 6467</a>
-          <a href="mailto:admin@freedomwithoutfrontiers.ca">admin@freedomwithoutfrontiers.ca</a>
-          <p>36 Park Lawn Road, Unit 403 M8V 0E5<br>Toronto, ON Canada</p>
-          <p>
-            Freedom Without Frontiers is proudly operated by the 16932495 Canada Foundation,
-            a registered non-profit organization in Canada.
-          </p>
-        </div>
-      </footer>
-    </section>
-  </main>
+      <button class="donate-submit" id="donate-button" type="button">DONATE $10</button>
+      <p class="setup-note" id="donation-note">Donation checkout will be connected before launch.</p>
+    </div>
+  </section>
 
-  <script src="script.js"></script>
+  <section class="contact-block">
+    <h2>Contact Us</h2>
+    <div class="contact-grid">
+      <div class="contact-copy">
+        <p>Whether you're looking to get involved, become a mentor, explore a partnership, volunteer your time, or simply learn more about our mission, we'd love to hear from you.</p>
+        <p>At Freedom Without Frontiers, we believe meaningful change starts with connection. Reach out today and discover how you can help expand opportunity, empower individuals, and make a lasting impact in communities around the world.</p>
+        <p>Together, we can build a future where opportunity knows no borders.</p>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <div class="field"><label for="first-name">FIRST NAME *</label><input id="first-name" name="firstName" type="text" required></div>
+        <div class="field"><label for="last-name">LAST NAME *</label><input id="last-name" name="lastName" type="text" required></div>
+        <div class="field"><label for="email">EMAIL *</label><input id="email" name="email" type="email" required></div>
+        <div class="field"><label for="phone">PHONE</label><input id="phone" name="phone" type="tel"></div>
+        <div class="field full"><label for="message">MESSAGE *</label><textarea id="message" name="message" required></textarea></div>
+        <div class="field full">
+          <button class="form-submit" type="submit">SUBMIT</button>
+          <p class="setup-note" id="form-note">Form delivery will be connected before launch.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="brand-footer contact-footer-section">
+    <div class="shape footer-left-light"></div>
+    <div class="shape footer-left-dark"></div>
+    <div class="shape footer-top-dark"></div>
+    <div class="shape footer-top-light"></div>
+    <div class="shape footer-right"></div>
+
+    <div class="footer-lockup">
+      <img src="assets/logo-mark.png" alt="">
+      <h2>FREEDOM<br>WITHOUT<br>FRONTIERS</h2>
+      <a class="pill" href="mailto:admin@freedomwithoutfrontiers.ca"><span>CONTACT</span><b>→</b></a>
+    </div>
+
+    <footer class="footer-info">
+      <div>
+        <strong>MENU</strong>
+        <a href="index.html#about">About</a>
+        <a href="index.html#get-involved">Get Involved</a>
+        <a href="#donate">Donate</a>
+      </div>
+      <div>
+        <strong>CONTACT</strong>
+        <a href="tel:+14163006467">+1 416 300 6467</a>
+        <a href="mailto:admin@freedomwithoutfrontiers.ca">admin@freedomwithoutfrontiers.ca</a>
+        <p>36 Park Lawn Road, Unit 403 M8V 0E5<br>Toronto, ON Canada</p>
+        <p>Freedom Without Frontiers is proudly operated by the 16932495 Canada Foundation, a registered non-profit organization in Canada.</p>
+      </div>
+    </footer>
+  </section>
+</main>
+<script src="script.js"></script>
 </body>
 </html>

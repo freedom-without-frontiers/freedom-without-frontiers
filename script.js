@@ -1,83 +1,40 @@
-const toggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav');
-
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
+const toggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('.nav');
+if(toggle&&nav){
+  toggle.addEventListener('click',()=>{
+    const open=nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',String(open));
   });
-
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    nav.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-  }));
 }
-
-const frequencyButtons = document.querySelectorAll('.donation-choice.frequency');
-const amountButtons = document.querySelectorAll('.donation-choice.amount');
-const donateButton = document.getElementById('donate-button');
-const customWrap = document.querySelector('.custom-amount-wrap');
-const customAmount = document.getElementById('custom-amount');
-const donationNote = document.getElementById('donation-note');
-
-let selectedFrequency = 'One time';
-let selectedAmount = '10';
-
-function updateDonateButton() {
-  if (!donateButton) return;
-  const amountText = selectedAmount === 'Other'
-    ? (customAmount && customAmount.value ? `$${customAmount.value}` : 'CUSTOM AMOUNT')
-    : `$${selectedAmount}`;
-
-  donateButton.textContent = selectedFrequency === 'Monthly'
-    ? `DONATE ${amountText} MONTHLY`
-    : `DONATE ${amountText}`;
+const frequencyButtons=document.querySelectorAll('.donation-choice.frequency');
+const amountButtons=document.querySelectorAll('.donation-choice.amount');
+const donateButton=document.getElementById('donate-button');
+const customWrap=document.querySelector('.custom-amount-wrap');
+const customAmount=document.getElementById('custom-amount');
+let selectedFrequency='One time';
+let selectedAmount='10';
+function updateDonate(){
+  if(!donateButton)return;
+  const amount=selectedAmount==='Other'?(customAmount?.value?`$${customAmount.value}`:'CUSTOM AMOUNT'):`$${selectedAmount}`;
+  donateButton.textContent=selectedFrequency==='Monthly'?`DONATE ${amount} MONTHLY`:`DONATE ${amount}`;
 }
-
-frequencyButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    frequencyButtons.forEach(b => b.classList.remove('active'));
-    button.classList.add('active');
-    selectedFrequency = button.dataset.frequency;
-    updateDonateButton();
-  });
+frequencyButtons.forEach(btn=>btn.addEventListener('click',()=>{
+  frequencyButtons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+  selectedFrequency=btn.dataset.frequency;updateDonate();
+}));
+amountButtons.forEach(btn=>btn.addEventListener('click',()=>{
+  amountButtons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+  selectedAmount=btn.dataset.amount;if(customWrap)customWrap.hidden=selectedAmount!=='Other';updateDonate();
+}));
+customAmount?.addEventListener('input',updateDonate);
+document.getElementById('donate-button')?.addEventListener('click',()=>{
+  const note=document.getElementById('donation-note');
+  if(note)note.textContent='Donation checkout is not connected yet. We will connect it before launch.';
 });
-
-amountButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    amountButtons.forEach(b => b.classList.remove('active'));
-    button.classList.add('active');
-    selectedAmount = button.dataset.amount;
-    if (customWrap) customWrap.hidden = selectedAmount !== 'Other';
-    if (selectedAmount === 'Other' && customAmount) customAmount.focus();
-    updateDonateButton();
-  });
+const form=document.getElementById('contact-form');
+form?.addEventListener('submit',e=>{
+  e.preventDefault();
+  if(!form.checkValidity()){form.reportValidity();return;}
+  const note=document.getElementById('form-note');
+  if(note)note.textContent='The form layout is ready. Delivery will be connected before launch.';
 });
-
-if (customAmount) {
-  customAmount.addEventListener('input', updateDonateButton);
-}
-
-if (donateButton) {
-  donateButton.addEventListener('click', () => {
-    if (donationNote) {
-      donationNote.textContent = 'Donation checkout is not connected yet. We will connect your payment provider before moving the live domain.';
-    }
-  });
-}
-
-const contactForm = document.getElementById('contact-form');
-const formNote = document.getElementById('form-note');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', event => {
-    event.preventDefault();
-    if (!contactForm.checkValidity()) {
-      contactForm.reportValidity();
-      return;
-    }
-    if (formNote) {
-      formNote.textContent = 'Your form is designed and ready. We still need to connect the delivery service before launch.';
-    }
-  });
-}
