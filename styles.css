@@ -429,3 +429,84 @@ h1,h2,h3,p{margin-top:0}
   .frequency-group{grid-template-columns:1fr}.amount-group{grid-template-columns:1fr 1fr}
   .footer-lockup{grid-template-columns:90px auto}.footer-lockup img{width:90px;height:90px}.footer-lockup h2{font-size:29px}
 }
+
+
+/* === Get Involved surgical layout fix === */
+.involved-block .pill,
+.get-involved .pill,
+#get-involved .pill{
+  width:185px !important;
+  max-width:185px !important;
+  display:flex !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.involve-grid,
+.involved-grid,
+.get-involved-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  gap:70px !important;
+  align-items:start !important;
+}
+
+.involve-card,
+.involved-card,
+.get-involved-card{
+  position:relative !important;
+  display:grid !important;
+  grid-template-columns:180px minmax(0, 1fr) !important;
+  column-gap:34px !important;
+  align-items:center !important;
+  min-width:0 !important;
+}
+
+.involve-card .leaf,
+.involved-card .leaf,
+.get-involved-card .leaf{
+  position:relative !important;
+  inset:auto !important;
+  width:180px !important;
+  height:180px !important;
+  margin:0 !important;
+  flex:none !important;
+}
+
+.involve-card h3,
+.involve-card p,
+.involved-card h3,
+.involved-card p,
+.get-involved-card h3,
+.get-involved-card p{
+  position:relative !important;
+  z-index:2 !important;
+}
+
+@media(max-width:1200px){
+  .involve-grid,
+  .involved-grid,
+  .get-involved-grid{
+    gap:34px !important;
+  }
+  .involve-card,
+  .involved-card,
+  .get-involved-card{
+    grid-template-columns:135px minmax(0,1fr) !important;
+    column-gap:24px !important;
+  }
+  .involve-card .leaf,
+  .involved-card .leaf,
+  .get-involved-card .leaf{
+    width:135px !important;
+    height:135px !important;
+  }
+}
+
+@media(max-width:980px){
+  .involve-grid,
+  .involved-grid,
+  .get-involved-grid{
+    grid-template-columns:1fr !important;
+  }
+}
