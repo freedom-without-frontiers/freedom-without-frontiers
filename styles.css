@@ -560,3 +560,55 @@ h1,h2,h3,p{margin-top:0}
     border-radius:70px !important;
   }
 }
+
+
+/* === Get Involved spacing + Join Us button fix === */
+.get-involved{
+  padding-top:32px !important;
+  padding-bottom:70px !important;
+  min-height:0 !important;
+}
+
+.get-involved h2{
+  margin-bottom:24px !important;
+}
+
+.get-involved .section-cta,
+.get-involved .join-us,
+.get-involved a[href*="contact"]{
+  width:260px !important;
+  max-width:260px !important;
+  display:flex !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.involved-grid{
+  margin-top:70px !important;
+  margin-bottom:0 !important;
+  min-height:0 !important;
+}
+
+.involved-grid article{
+  min-height:0 !important;
+  height:auto !important;
+}
+
+.team-section,
+.meet-team{
+  margin-top:0 !important;
+  padding-top:70px !important;
+}
+
+@media(max-width:700px){
+  .get-involved .section-cta,
+  .get-involved .join-us,
+  .get-involved a[href*="contact"]{
+    width:220px !important;
+    max-width:calc(100% - 40px) !important;
+  }
+
+  .involved-grid{
+    margin-top:45px !important;
+  }
+}
