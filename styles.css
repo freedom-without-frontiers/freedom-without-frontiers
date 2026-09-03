@@ -717,3 +717,29 @@ h1,h2,h3,p{margin-top:0}
   margin-left:auto !important;
   margin-right:auto !important;
 }
+
+
+/* === v17 Contact page without donations === */
+.contact-hero{
+  height:680px !important;
+}
+.contact-title{
+  top:430px !important;
+}
+.contact-bodycopy{
+  top:525px !important;
+}
+.contact-block{
+  padding-top:70px !important;
+}
+@media(max-width:980px){
+  .contact-hero{
+    height:700px !important;
+  }
+  .contact-title{
+    top:385px !important;
+  }
+  .contact-bodycopy{
+    top:485px !important;
+  }
+}
