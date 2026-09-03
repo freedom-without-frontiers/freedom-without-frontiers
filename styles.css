@@ -431,82 +431,77 @@ h1,h2,h3,p{margin-top:0}
 }
 
 
-/* === Get Involved surgical layout fix === */
-.involved-block .pill,
-.get-involved .pill,
-#get-involved .pill{
-  width:185px !important;
-  max-width:185px !important;
-  display:flex !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
-}
 
-.involve-grid,
-.involved-grid,
-.get-involved-grid{
+
+/* === FINAL Get Involved overlap fix: actual live selectors === */
+.involved-grid{
   display:grid !important;
-  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
-  gap:70px !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:56px !important;
   align-items:start !important;
 }
 
-.involve-card,
-.involved-card,
-.get-involved-card{
-  position:relative !important;
+.involved-grid article{
   display:grid !important;
-  grid-template-columns:180px minmax(0, 1fr) !important;
-  column-gap:34px !important;
-  align-items:center !important;
+  grid-template-columns:150px minmax(0,1fr) !important;
+  column-gap:28px !important;
+  align-items:start !important;
+  padding-left:0 !important;
+  min-width:0 !important;
+  overflow:visible !important;
+}
+
+.involved-grid .leaf-icon{
+  position:relative !important;
+  width:150px !important;
+  height:150px !important;
+  margin:0 !important;
+  transform:none !important;
+  left:auto !important;
+  right:auto !important;
+  top:auto !important;
+  bottom:auto !important;
+  align-self:start !important;
+}
+
+.involved-grid .card-copy{
+  position:relative !important;
+  z-index:2 !important;
+  margin:0 !important;
+  padding:14px 0 0 !important;
   min-width:0 !important;
 }
 
-.involve-card .leaf,
-.involved-card .leaf,
-.get-involved-card .leaf{
-  position:relative !important;
-  inset:auto !important;
-  width:180px !important;
-  height:180px !important;
-  margin:0 !important;
-  flex:none !important;
+.involved-grid .card-copy h3{
+  margin:0 0 12px !important;
 }
 
-.involve-card h3,
-.involve-card p,
-.involved-card h3,
-.involved-card p,
-.get-involved-card h3,
-.get-involved-card p{
-  position:relative !important;
-  z-index:2 !important;
+.involved-grid .card-copy p{
+  margin:0 !important;
+  max-width:none !important;
+  text-align:left !important;
 }
 
 @media(max-width:1200px){
-  .involve-grid,
-  .involved-grid,
-  .get-involved-grid{
-    gap:34px !important;
+  .involved-grid{
+    gap:32px !important;
   }
-  .involve-card,
-  .involved-card,
-  .get-involved-card{
-    grid-template-columns:135px minmax(0,1fr) !important;
-    column-gap:24px !important;
+  .involved-grid article{
+    grid-template-columns:120px minmax(0,1fr) !important;
+    column-gap:22px !important;
   }
-  .involve-card .leaf,
-  .involved-card .leaf,
-  .get-involved-card .leaf{
-    width:135px !important;
-    height:135px !important;
+  .involved-grid .leaf-icon{
+    width:120px !important;
+    height:120px !important;
   }
 }
 
 @media(max-width:980px){
-  .involve-grid,
-  .involved-grid,
-  .get-involved-grid{
+  .involved-grid{
     grid-template-columns:1fr !important;
+    gap:38px !important;
+  }
+  .involved-grid article{
+    grid-template-columns:120px minmax(0,1fr) !important;
   }
 }
