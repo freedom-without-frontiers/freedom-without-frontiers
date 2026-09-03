@@ -505,3 +505,58 @@ h1,h2,h3,p{margin-top:0}
     grid-template-columns:120px minmax(0,1fr) !important;
   }
 }
+
+
+/* === Uniform About Us panels === */
+.about-block{
+  padding:70px 0 90px !important;
+}
+
+.about-block h2{
+  margin:0 6% 50px 0 !important;
+}
+
+.about-three{
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  gap:40px !important;
+  width:92% !important;
+  margin:0 auto !important;
+  align-items:stretch !important;
+}
+
+.about-panel,
+.about-panel-left,
+.about-panel-middle,
+.about-panel-right{
+  min-height:620px !important;
+  height:100% !important;
+  margin:0 !important;
+  padding:150px 64px 64px !important;
+  border-radius:180px 180px 0 0 !important;
+  background:#f8f8f8 !important;
+}
+
+.about-panel h3{
+  margin:14px 0 18px !important;
+}
+
+.about-panel p{
+  margin:0 !important;
+}
+
+@media(max-width:980px){
+  .about-three{
+    grid-template-columns:1fr !important;
+    width:100% !important;
+    gap:24px !important;
+  }
+  .about-panel,
+  .about-panel-left,
+  .about-panel-middle,
+  .about-panel-right{
+    min-height:0 !important;
+    padding:48px 34px !important;
+    border-radius:70px !important;
+  }
+}
