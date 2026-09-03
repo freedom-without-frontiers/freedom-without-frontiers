@@ -32,9 +32,35 @@ document.getElementById('donate-button')?.addEventListener('click',()=>{
   if(note)note.textContent='Donation checkout is not connected yet. We will connect it before launch.';
 });
 const form=document.getElementById('contact-form');
-form?.addEventListener('submit',e=>{
+form?.addEventListener('submit', async e=>{
   e.preventDefault();
   if(!form.checkValidity()){form.reportValidity();return;}
+
   const note=document.getElementById('form-note');
-  if(note)note.textContent='The form layout is ready. Delivery will be connected before launch.';
+  const submit=form.querySelector('.form-submit');
+  const originalText=submit?.textContent || 'SUBMIT';
+
+  if(submit){ submit.disabled=true; submit.textContent='SENDING...'; }
+  if(note) note.textContent='';
+
+  try{
+    const response=await fetch(form.action,{
+      method:'POST',
+      body:new FormData(form),
+      headers:{'Accept':'application/json'}
+    });
+
+    if(response.ok){
+      form.reset();
+      if(note) note.textContent='Thank you! Your message has been sent successfully.';
+    }else{
+      const data=await response.json().catch(()=>({}));
+      const message=data?.errors?.map(error=>error.message).join(', ');
+      if(note) note.textContent=message || 'We could not send your message. Please try again.';
+    }
+  }catch(error){
+    if(note) note.textContent='We could not send your message. Please try again.';
+  }finally{
+    if(submit){ submit.disabled=false; submit.textContent=originalText; }
+  }
 });
