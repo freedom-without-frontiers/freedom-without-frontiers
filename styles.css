@@ -661,3 +661,59 @@ h1,h2,h3,p{margin-top:0}
   .involved-block .join-pill{margin-bottom:36px !important;}
   .involved-block .involved-grid{gap:30px !important;}
 }
+
+
+/* === v15 Contact/Donate page centered alignment === */
+.donate-hero,
+.donate-section,
+.contact-intro,
+.contact-section{
+  text-align:center !important;
+}
+
+.donate-hero h1,
+.donate-hero h2,
+.donate-section h1,
+.donate-section h2,
+.contact-intro h1,
+.contact-intro h2,
+.contact-section h1,
+.contact-section h2{
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.donate-hero p,
+.donate-section > p,
+.contact-intro p,
+.contact-section > p{
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.donation-box,
+.donation-form,
+.donate-form,
+#donate form{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.donation-box label,
+.donation-form label,
+.donate-form label,
+#donate label{
+  text-align:center !important;
+  display:block !important;
+}
+
+.donation-note,
+.donate-note,
+#donate small{
+  text-align:center !important;
+  display:block !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
